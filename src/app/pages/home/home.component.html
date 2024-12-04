@@ -1,0 +1,27 @@
+<form class="container-exterior" (ngSubmit)="consultarPersona()" [formGroup]="formBusqueda">
+    <div class="container-interior">
+        <div class="row">
+            <div class="col-md-12 mb-6">
+                <label for="tipoDocumento">Tipo de documento</label>
+                <select class="form-control custom-select" id="tipoDocumento" formControlName="tipo_documento">
+                    <option> seleccione opcion</option>
+                    <option value="C">Cédula de Ciudadanía</option>
+                    <option value="P">Pasaporte</option>
+                </select>
+            </div>
+
+            <div class="col-md-12 mb-6 mt-3 ">
+                <label for="numeroDocumento">Número de documento</label>
+                <input type="text" class="form-control" id="numeroDocumento" formControlName="documento"
+                    placeholder="Ingresa el número de documento">
+            </div>
+        </div>
+
+        <button class="btn custom-btn mt-4 w-100" type="submit" [ngClass]="{
+            'btn-primary': formBusqueda.valid, 
+            'btn-secondary': !formBusqueda.valid
+          }" [disabled]="formBusqueda.invalid">Buscar</button>
+
+        <span class="text-secondary">* Todos los campos son obligatorios</span>
+    </div>
+</form>
