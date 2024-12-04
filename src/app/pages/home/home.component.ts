@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 /* interface */
-import { busquedaPersona } from 'src/app/interfaces/busqueda-persona.interface';
+import { BusquedaPersona } from 'src/app/interfaces/busqueda-persona.interface';
 import { Persona } from 'src/app/interfaces/persona.interface';
 
 /* service */
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public nuevaBusqueda(): busquedaPersona {
+  public nuevaBusqueda(): BusquedaPersona {
     return {
       documento: this.formBusqueda.get('documento')?.value!,
       tipo_documento: this.formBusqueda.get('tipo_documento')?.value!

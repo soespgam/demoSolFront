@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Persona } from '../interfaces/persona.interface';
 import { environment } from 'src/environments/enviroment';
-import { busquedaPersona } from '../interfaces/busqueda-persona.interface';
+import { BusquedaPersona } from '../interfaces/busqueda-persona.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class PersonaService {
 
   constructor(public httpClient: HttpClient) { }
 
-  public traerPersonaPorDocumento(persona: busquedaPersona): Observable<Persona> {
+  public traerPersonaPorDocumento(persona: BusquedaPersona): Observable<Persona> {
     return this.httpClient.get<Persona>(`${environment.baseUrl}${environment.httpUrls.persona.getPersona(persona.documento, persona.tipo_documento)}`, this.httpOptions);
   }
 }
